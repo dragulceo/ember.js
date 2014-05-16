@@ -280,6 +280,14 @@ export default Mixin.create(MutableEnumerable, {
     }
   },
 
+  clear: function () {
+    if ( get(this, 'length') === 0) {
+      return this;
+    }
+    this.set('content', []);
+    return this;
+  },
+
   _binarySearch: function(item, low, high) {
     var mid, midItem, res, arrangedContent;
 
